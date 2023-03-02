@@ -10,6 +10,11 @@ struct User {
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
 
+// unit-like structs without any fields can be useful when you need
+//to implement a trait on some type but don't havy any data that you
+//want to store in the type itself
+struct AlwaysEqual;
+
 fn main() {
     let user1 = User {
         active: true,
@@ -44,8 +49,11 @@ fn main() {
     //cannot use this function because ths truct update syntax uses =
     //like an assignment; this is because it moves the data
 
-    let black = Color(0, 0, 0);
-    let origin = Point(0, 0, 0);
+    let black = Color(0, 0, 0); //color type
+    let origin = Point(0, 0, 0); // point type
+
+    let subject = AlwaysEqual;
+    
     
 }
 
